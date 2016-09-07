@@ -1,0 +1,12 @@
+body {
+	background-color: lightblue;
+	color: black	;
+}
+
+.btn {
+	margin: 10px;
+}
+
+.no-display {
+	display: none;
+}

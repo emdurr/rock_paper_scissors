@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rock - Paper - Scissors</title>
+		<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+		<link rel="stylesheet" type="text/css" href="assets/stylesheets/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="assets/stylesheets/styles.css">
+		<script type="text/javascript" src="assets/javascripts/jquery-3.1.0.js"></script>
+		<script type="text/javascript" src="assets/javascripts/bootstrap.js"></script>
+		<script type="text/javascript" src="assets/javascripts/app.js"></script>
+	</head>
+	<body class="text-center">
+		<h1>Rock || Paper || Scissors</h1>
+		<hr>
+		<h2>Choose:</h2>
+		<div class="container">
+			<input type="text" readonly id="choice_result">
+			<div class="row">
+				<div class="col-xs-4">
+					<button class="btn btn-primary btn-block game_button">Rock</button>
+				</div>
+				<div class="col-xs-4">
+					<button class="btn btn-primary btn-block game_button" >Paper</button>
+				</div>
+				<div class="col-xs-4">
+					<button class="btn btn-primary btn-block game_button">Scissors</button>
+				</div>
+			</div>
+			<div class="no-display" id="play_button">
+				<button class="btn btn-primary btn-block">Play</button>
+				
+			</div>
+				<h1 id="winner" class="no-display stats"> </h1>
+				<h1 id="loser" class="no-display stats"> </h1>
+				<h1 id="tiers" class="no-display stats"> </h1>
+		</div>
+	</body>
+</html>
