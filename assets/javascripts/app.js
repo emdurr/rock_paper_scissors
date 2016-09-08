@@ -10,6 +10,7 @@ $(document).ready(function(){
 	var $paperPic2 = $('#paper_pic2');
 	var $scissorsPic2 = $('#scissors_pic2');
 	var $choiceResult = $('#choice_result');
+	var $winnerLoserText = $('#winner_loser_text');
 	var playChoice, computerChoice;
 	var $computerOptions = ['Rock', 'Paper', 'Scissors'];
 	var $stats = $('.stats');
@@ -35,24 +36,28 @@ $(document).ready(function(){
 	$playButton.click(function() {
 		$stats.slideDown();
 		$playAgainButton.slideDown();
+		$winnerLoserText.slideDown();
 		computerChoice = ($computerOptions[Math.floor ( Math.random() * $computerOptions.length )])
 		switch(playChoice) {
 			case 'Rock':
 				if(computerChoice === 'Rock') {
 					$rockPic2.slideDown();
-					console.log($('#comp_choice'));
 					$ties += 1;
 					$('#tiers').html('Ties: ' + ($ties));
+					$winnerLoserText.addClass('blank');
+					$winnerLoserText.html("Nobody wins...nobody loses...");
 				} else if(computerChoice === 'Paper') {
 					$paperPic2.slideDown();
-					console.log($('#comp_choice'));
 					$loses += 1;
 					$('#loser').html("Loses: " + ($loses));
+					$winnerLoserText.addClass('red');
+					$winnerLoserText.html("You lose...");
 				} else {
 					$scissorsPic2.slideDown();
-					console.log($('#comp_choice'));
 					$wins += 1;
 					$('#winner').html("Wins:" + ($wins));
+					$winnerLoserText.addClass('green');
+					$winnerLoserText.html("Winner! Winner!");
 				}
 				break;
 			case 'Paper':
@@ -60,14 +65,20 @@ $(document).ready(function(){
 					$paperPic2.slideDown();
 					$ties += 1;
 					$('#tiers').html('Ties: ' + ($ties));
+					$winnerLoserText.addClass('blank');
+					$winnerLoserText.html("Nobody wins...nobody loses...");
 				} else if(computerChoice === 'Scissors') {
 					$scissorsPic2.slideDown();
 					$loses += 1;
 					$('#loser').html("Loses: " + ($loses));
+					$winnerLoserText.addClass('red');
+					$winnerLoserText.html("You lose...");
 				} else {
 					$rockPic2.slideDown();
 					$wins += 1;
 					$('#winner').html("Wins:" + ($wins));
+					$winnerLoserText.addClass('green');
+					$winnerLoserText.html("Winner! Winner!");
 				}
 				break;
 			case 'Scissors':
@@ -75,12 +86,18 @@ $(document).ready(function(){
 					$scissorsPic2.slideDown();
 					$ties += 1;
 					$('#tiers').html('Ties:' + ($ties));
+					$winnerLoserText.addClass('blank');
+					$winnerLoserText.html("Nobody wins...nobody loses...");
 				} else if(computerChoice === 'Rock') {
 					$rockPic2.slideDown();
 					$loses += 1;
 					$('#loser').html("Loses: " + ($loses));
+					$winnerLoserText.addClass('red');
+					$winnerLoserText.html("You lose...");
 				} else {
 					$paperPic2.slideDown();
+					$winnerLoserText.addClass('green');
+					$winnerLoserText.html("Winner! Winner!");
 					$wins += 1;
 					$('#winner').html("Wins:" + ($wins));
 				}
@@ -97,5 +114,7 @@ $(document).ready(function(){
 		$gameChoices.slideUp();
 		$gameButtons.slideDown();
 		$playAgainButton.slideUp();
+		$winnerLoserText.slideUp();
+		$winnerLoserText.removeClass();
 	});
 });
